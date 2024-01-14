@@ -4,7 +4,7 @@
 	<version>1.0.1</version>
 	<release_date>20240114153000</release_date>
 	<coder>Jual</coder>
-	<short_description>A game of life clone for the wii.</short_description>
+	<short_description>A Game of Life clone for the wii.</short_description>
 	<long_description>Game of Life is a cellular automaton 0-player game made by Jhon Horton Conway in 1970. In the "simulation" are just 4 rules that apply to each cell.
 
 1. Any live cell with fewer than two live neighbours dies, as if by underpopulation.
