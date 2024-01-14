@@ -1,4 +1,4 @@
-main.o: J:/.MyStuff/Programming/C++/ControlLinkWii/source/main.cpp \
+main.o: J:/.MyStuff/Programming/C++/WiiOfLife/source/main.cpp \
  C:/devkitPro/libogc/include/gccore.h \
  C:/devkitPro/libogc/include/ogc/dsp.h \
  C:/devkitPro/libogc/include/gctypes.h \
