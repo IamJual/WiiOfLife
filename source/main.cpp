@@ -50,7 +50,15 @@ int main(int argc, char **argv) {
 	printf("\x1b[2;0H");
 
 
-	printf("Hello World!");
+	printf("Wii of life is a Game of Life clone witch is a cellular automaton 0-player game made by Jhon Horton Conway in 1970. In the simulation are just 4 rules that apply to each cell.");
+	printf(" ");
+	printf("1. Any live cell with fewer than two live neighbours dies, as if by underpopulation.");
+	printf("2. Any live cell with two or three live neighbours lives on to the next generation.");
+	printf("3. Any live cell with more than three live neighbours dies, as if by overpopulation.");
+	printf("4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.");
+	printf("In the game you can place any cell configuration on an almost infinite grid and watch how magicly the simulation runs.");
+	printf(" ");
+	printf("This project was created on 14/01/2024 and completed on Not Yet by Jual.");
 
 	while(1) {
 
