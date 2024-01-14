@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<app version="1">
+	<name>WiiOfLife</name>
+	<version>1.0.0</version>
+	<release_date>20240114153000</release_date>
+	<coder>Jual</coder>
+	<short_description>A game of live clone for the wii.</short_description>
+	<long_description>
+	Game of Life is a cellular automaton 0-player game made by Jhon Horton Conway in 1970. In the "simulation" are just 4 rules that apply to each cell.
+
+	1. Any live cell with fewer than two live neighbours dies, as if by underpopulation.
+	2. Any live cell with two or three live neighbours lives on to the next generation.
+	3. Any live cell with more than three live neighbours dies, as if by overpopulation.
+	4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+
+	In the game you can place any cell configuration on an almost infinite grid and watch how magicly the simulation runs.
+
+	This project was created on 14/01/2024 and completed on 15/01/2024 by Jual.
+	Discord: iamjual
+	Github: IamJual
+	Youtube: @JualLikesCheese
+
+	</long_description>
+<ahb_access/>
+</app>
