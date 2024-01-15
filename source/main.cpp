@@ -1,30 +1,44 @@
-#include <grrlib.h>
-
-#include <stdlib.h>
+#include <ogcsys.h>
 #include <wiiuse/wpad.h>
+#include <wiisprite.h>
 
-int main(int argc, char **argv) {
-    // Initialise the Graphics & Video subsystem
-    GRRLIB_Init();
+// Function to create and draw a square
+wsp::Rectangle* createSquare(float x, float y, float size, u8 red, u8 green, u8 blue, u8 alpha) {
+    wsp::Rectangle* rect = new wsp::Rectangle{};
+    rect->x = x;
+    rect->y = y;
+    rect->width = size;
+    rect->height = size;
 
-    // Initialise the Wiimotes
+    wsp::Quad quad{};
+    quad.SetRectangle(rect);
+    quad.SetFillColor({red, green, blue, alpha});
+    quad.Draw(0, 0);
+
+    return rect;
+}
+
+
+// The main game loop
+int main() {
+
+    wsp::GameWindow gwd;
+    gwd.InitVideo();
+
+    gwd.SetBackground((GXColor) {170, 0, 255, 255});
+
     WPAD_Init();
 
-    // Loop forever
-    while(1) {
-
-        WPAD_ScanPads();  // Scan the Wiimotes
-
-        // If [HOME] was pressed on the first Wiimote, break out of the loop
-        if (WPAD_ButtonsDown(0) & WPAD_BUTTON_HOME)  break;
-
-			GRRLIB_Circle(100, 100, 100, 0xFFFFFFFF, true);
-			GRRLIB_FillScreen(0xFF0000FF);
-
-        GRRLIB_Render();  // Render the frame buffer to the TV
+    for (;;) {
+        WPAD_ScanPads();
+        if ((WPAD_ButtonsDown(WPAD_CHAN_0) & WPAD_BUTTON_HOME) != 0u){
+            break;
+        }
+        
+        createSquare(0, 0, 100, 170, 0, 255, 255);
+        
+        gwd.Flush();
     }
 
-    GRRLIB_Exit(); // Be a good boy, clear the memory allocated by GRRLIB
-
-    exit(0);  // Use exit() to exit a program, do not use 'return' from main()
+    return 0;
 }
