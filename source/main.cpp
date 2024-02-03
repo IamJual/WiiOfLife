@@ -1,7 +1,9 @@
 #include <ogcsys.h>
 #include <wiiuse/wpad.h>
 #include <wiisprite.h>
-#include <core
+
+int squareSize = 50;
+
 
 // Function to create and draw a square
 wsp::Rectangle* createSquare(float x, float y, float size, u8 red, u8 green, u8 blue, u8 alpha) {
@@ -24,10 +26,8 @@ int main() {
 
     wsp::GameWindow gwd;
     gwd.InitVideo();
-    gwd.SetBackground((GXColor) {0, 0, 0, 255});
+    gwd.SetBackground((GXColor) {127, 127, 127, 255});
 
-    int x = gwd.GetWidth() / 2;
-    int y = gwd.GetHeight();
 
     WPAD_Init();
 
@@ -35,6 +35,17 @@ int main() {
         WPAD_ScanPads();
         if ((WPAD_ButtonsDown(WPAD_CHAN_0) & WPAD_BUTTON_HOME) != 0u){
             break;
+        }
+
+        for (int i = 0; i < 5; i++) {
+        
+
+        createSquare(i * squareSize, 0, squareSize, 0, 0, 0, 255);
+
+        i++;
+
+        createSquare(i * squareSize, 0, squareSize, 255, 255, 255, 255);
+
         }
         
         gwd.Flush();
